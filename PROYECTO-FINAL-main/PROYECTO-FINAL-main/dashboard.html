@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Se enlaza la hoja de estilos para los íconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Se establece el icono de la página -->
+  <link rel="icon" type="image/png" href="imagenes/logo.png">
+
+  <!-- Se especifica la codificación y la escala inicial -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Se enlaza la hoja de estilos de SweetAlert2 y la hoja de estilos personalizada para el dashboard -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <!-- Se establece el título de la página -->
+  <title>Gestor de Tareas</title>
+</head>
+
+<body>
+  <!-- Sección de navegación -->
+  <nav>
+    <div class="navbar-left">
+      <!-- Logo de la página con enlace a la página principal -->
+      <a href="index.html">
+        <img src="imagenes/logo.png" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Icono de usuario y nombre de usuario -->
+    <div class="navbar-right">
+      <a href="#" class="admin-icon"><i class="fa-solid fa-user"></i></a><span id="infoUsuario"></span>
+    </div>
+
+    <!-- Icono de cerrar sesión -->
+    <div class="navbar-right">
+      <a href="index.html" onclick="logout()" class="admin-icon"><i class="fa-solid fa-power-off"></i>
+        <div id="admin-menu">Cerrar Sesión</div>
+      </a>
+    </div>
+
+    <!-- Menú de navegación -->
+    <div class="menu">
+      <ul>
+        <li><a href="dashboard.html">Nueva Tareas</a></li>
+        <li><a href="verTareas.html">Ver Tareas</a></li>
+      </ul>
+    </div>
+
+    <!-- Elemento para la traducción de la página -->
+    <div id="google_translate_element"></div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="content">
+    <!-- Formulario para la creación de una nueva tarea -->
+    <div class="note-creator">
+      <h2>Nueva Tarea</h2>
+      <!-- Campos para el título y contenido de la tarea -->
+      <input type="text" id="note-title" placeholder=" Título de la tarea">
+      <textarea id="note-text" placeholder=" Contenido de la tarea"></textarea>
+
+      <!-- Campos para seleccionar el color y la fecha y hora de recordatorio -->
+      <label for="note-datetime">Color:</label>
+      <input type="color" id="note-color">
+      <label for="note-datetime">Recordatorio:</label>
+      <input type="datetime-local" id="note-datetime" required>
+      <hr>
+
+      <!-- Campo para seleccionar la categoría de la tarea -->
+      <label for="note-categoria">Categoria:</label>
+      <select id="categoria" required>
+        <option value="0" selected disabled>Seleccionar</option>
+        <option value="Personal">Personal</option>
+        <option value="Trabajo">Trabajo</option>
+        <option value="Estudio">Estudio</option>
+        <option value="Finanzas">Finanzas</option>
+        <option value="Eventos">Eventos</option>
+        <option value="Notas_rapidas">Notas rapidas</option>
+      </select>
+      <br>
+
+      <!-- Grupo de radio botones para seleccionar la etiqueta de la tarea -->
+      <div>
+        <label>Etiqueta:</label>
+        <input type="radio" name="etiqueta" id="urgente" value="Urgente"><span>Urgente</span>
+        <input type="radio" name="etiqueta" id="importante" value="Importante"><span>Importante</span>
+        <input type="radio" name="etiqueta" id="secundario" value="Secundario"><span>Secundario</span>
+      </div>
+      <br>
+
+      <!-- Botón para crear la tarea -->
+      <button onclick="createNote()" id="create-note">Crear Tarea</button>
+    </div>
+  </div>
+
+  <!-- Se incluyen los scripts de SweetAlert2 y los scripts personalizados para el dashboard -->
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script defer src="js/dashboard.js"></script>
+  <script src="js/notificaciones.js"></script>
+
+  <!-- Script para la traducción de la página -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es', // El idioma en el que está escrita tu página
+        includedLanguages: 'es,en,pt,fr', // Los idiomas a los que el usuario puede cambiar
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <!-- Script para cargar la biblioteca de traducción -->
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

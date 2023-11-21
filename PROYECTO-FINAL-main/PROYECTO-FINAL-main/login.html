@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Configuración de metadatos del documento -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Enlaces a hojas de estilo externas -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="css/login.css">
+
+  <!-- Icono de la pestaña del navegador -->
+  <link rel="icon" type="image/png" href="imagenes/logo.png">
+
+  <!-- Título de la página -->
+  <title>Iniciar Sesión</title>
+</head>
+
+<body>
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Logo de la aplicación con enlace a la página principal -->
+    <div class="logo">
+      <a href="index.html"><img src="imagenes/logo_completo.png" alt="Logo"></a>
+    </div>
+
+    <!-- Encabezado principal -->
+    <h1>Iniciar Sesión</h1>
+
+    <!-- Formulario de inicio de sesión -->
+    <form id="loginForm">
+      <!-- Campo de entrada para el correo electrónico -->
+      <div class="form-group">
+        <label for="username"><strong>Correo:</strong></label>
+        <input placeholder="Ingresa tu correo" type="text" id="username" name="username" required>
+      </div>
+
+      <!-- Campo de entrada para la contraseña -->
+      <div class="form-group">
+        <label for="password"><strong>Contraseña:</strong></label>
+        <input placeholder="Ingresa tu contraseña" type="password" id="password" name="password" required>
+      </div>
+
+      <!-- Botón para enviar el formulario y acceder al dashboard -->
+      <button id="dashboardButton" href="dashboard.html" type="submit">Iniciar Sesión</button>
+    </form>
+
+    <!-- Enlace para registrarse si no se tiene una cuenta -->
+    <div class="register-link">
+      ¿No tienes una cuenta en Organize My Mind? <a href="signup.html">Regístrate</a>.
+    </div>
+    <br>
+
+    <!-- Elemento para la integración del traductor de Google -->
+    <div id="google_translate_element"></div>
+  </div>
+
+  <!-- Scripts externos necesarios para el funcionamiento -->
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script src="js/login.js"></script>
+
+  <!-- Script para la integración del traductor de Google -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es', // El idioma en el que está escrita tu página
+        includedLanguages: 'es,en,pt,fr', // Los idiomas a los que el usuario puede cambiar
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Enlaces a archivos de estilo y configuración del icono -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="icon" type="image/png" href="imagenes/logo.png">
+  <!-- Configuración del juego de caracteres y la vista inicial -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título de la página -->
+  <title>Registrarse</title>
+</head>
+
+<body>
+  <!-- Encabezado de la página -->
+  <header>
+    <div class="logo">
+      <!-- Enlace al inicio con el logo -->
+      <a href="index.html">
+        <img src="imagenes/logo.png" alt="Logo de Organize My Mind" width="100">
+      </a>
+    </div>
+    <!-- Botón de alternar navegación para dispositivos móviles -->
+    <div class="navbar-toggle" onclick="toggleNavbar()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <!-- Menú de navegación -->
+    <nav class="navigation" id="navbarLinks">
+      <a href="queEs.html">¿Qué es?</a>
+      <a href="queSomos.html">¿Quiénes somos?</a>
+      <a href="login.html">Iniciar sesión</a>
+      <a href="signup.html">Registrarse</a>
+      <!-- Elemento para la traducción de idiomas -->
+      <div id="google_translate_element"></div>
+    </nav>
+  </header>
+
+  <!-- Contenedor principal de registro -->
+  <div class="registration-container">
+    <!-- Formulario de registro -->
+    <div class="registration-form">
+      <h1>Regístrate Gratis</h1>
+      <form id="registrationForm">
+        <!-- Campo de nombre de usuario -->
+        <label for="username"><strong>Nombre de Usuario:</strong></label>
+        <input placeholder="Digite su nombre de usuario" type="text" id="username" name="username"
+          pattern="[a-zA-Z0-9-_]{1,20}" required>
+        <small>De 1 a 20 caracteres. Solo letras, números, guiones o barras bajas.</small>
+
+        <!-- Campo de correo electrónico -->
+        <label for="email"><strong>Correo Electrónico:</strong></label>
+        <input placeholder="Digite su correo electrónico" type="email" id="email" name="email" required>
+
+        <!-- Campo de contraseña -->
+        <label for="password"><strong>Contraseña:</strong></label>
+        <input placeholder="Digite su contraseña" type="password" id="password" name="password"
+          pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-_,.;@?¿])[A-Za-z0-9-_.,;@?¿]{10,20}" required>
+        <small>De 10 a 20 caracteres. Al menos una mayúscula, una minúscula, un dígito y alguno de estos caracteres especiales (-_,.;@?¿).</small>
+
+        <!-- Campo de confirmación de contraseña -->
+        <label for="confirmPassword"><strong>Confirmar Contraseña:</strong></label>
+        <input placeholder="Digite para confirmar su contraseña" type="password" id="confirmPassword"
+          name="confirmPassword" required>
+
+        <!-- Casilla de aceptación de términos y condiciones -->
+        <label class="terminos-signup">
+          <input type="checkbox" required>
+          He leído y acepto los <a href="terminos.html">Términos y Condiciones</a>.
+        </label>
+
+        <!-- Botón de registro -->
+        <div><button type="submit">Registrarse</button></div>
+        <!-- Enlace para iniciar sesión si ya se tiene una cuenta -->
+        <div class="login-link">¿Ya tienes cuenta en Organize my mind?<a href="login.html">Inicia Sesión</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sección de motivación -->
+    <div class="motivation">
+      <h2>Motívate a Organizar tu Mente</h2>
+      <p>Únete a Organize My Mind y descubre una forma más eficiente de gestionar tu vida y alcanzar tus metas.</p>
+      <img src="imagenes/motivacion1.jpg" alt="Motivación para Registrarse">
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="footer-container">
+      <!-- Columna del logotipo -->
+      <div class="footer-column">
+        <a href="index.html">
+          <img src="imagenes/logo.png" alt="Logo de la empresa">
+        </a>
+      </div>
+      <!-- Columna de servicios de la página web -->
+      <div class="footer-column">
+        <h3>Servicios de la página web</h3>
+        <ul>
+          <li><a href="queEs.html">¿Qué es?</a></li>
+          <li><a href="queSomos.html">¿Qué somos?</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="signup.html">Registrarse</a></li>
+        </ul>
+      </div>
+      <!-- Columna de pestañas legales -->
+      <div class="footer-column">
+        <h3>Pestañas Legales</h3>
+        <ul>
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+          <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+        </ul>
+      </div>
+      <!-- Columna de redes sociales -->
+      <div class="footer-column">
+        <h3>Redes Sociales</h3>
+        <div class="social-buttons">
+          <a target="_blank" href="https://www.facebook.com"><img src="imagenes/facebook.png" alt="Facebook"></a>
+          <a target="_blank" href="https://www.twitter.com"><img src="imagenes/twitter.png" alt="Twitter"></a>
+          <a target="_blank" href="https://www.instagram.com"><img src="imagenes/instagram.png" alt="Instagram"></a>
+          <a target="_blank" href="https://www.linkedin.com"><img src="imagenes/linkedin.png" alt="LinkedIn"></a>
+        </div>
+        <!-- Año de derechos de autor y nombre de la empresa -->
+        <p>&copy; 2023 Organize my mind</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts de JavaScript para las funciones y bibliotecas utilizadas -->
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script defer src="js/signup.js"></script>
+  <script type="text/javascript">
+    // Función para la inicialización del elemento de traducción
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es', // El idioma en el que está escrita tu página
+        includedLanguages: 'es,en,pt,fr', // Los idiomas a los que el usuario puede cambiar
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <!-- Script para cargar el elemento de traducción -->
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
